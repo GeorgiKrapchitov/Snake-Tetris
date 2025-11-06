@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classic Games - Snake & Tetris</title>
+    <link rel="stylesheet" href="styles/mainRefactored.css">
+    <!-- Load refactored main script -->
+    <script type="module" src="js/mainRefactored.js"></script>
+</head>
+<body>
+    <div class="game-container">
+        <!-- Selection Screen -->
+        <div id="selection-screen" class="screen">
+            <div class="menu-header">
+                <h1>Classic Games</h1>
+                <div class="menu-actions">
+                    <button id="sound-toggle" class="icon-button" title="Toggle Sound">🔊</button>
+                    <button id="settings-button" class="icon-button" title="Settings">⚙️</button>
+                    <button id="instructions-button" class="icon-button" title="How to Play">❓</button>
+                    <button id="achievements-button" class="icon-button" title="Achievements">🏆</button>
+                </div>
+            </div>
+            
+            <div class="game-options">
+                <div class="game-option" id="snake-option">
+                    <div class="game-preview">
+                        <canvas id="snake-preview" width="200" height="200"></canvas>
+                    </div>
+                    <h2>🐍 Snake</h2>
+                    <p>Guide the snake, eat the food, and grow longer without hitting the walls or yourself!</p>
+                    <div class="high-score">High Score: <span id="snake-high-score">0</span></div>
+                    <button class="play-button" data-game="snake">Play Snake</button>
+                </div>
+                
+                <div class="game-option" id="tetris-option">
+                    <div class="game-preview">
+                        <canvas id="tetris-preview" width="200" height="200"></canvas>
+                    </div>
+                    <h2>🧱 Tetris</h2>
+                    <p>Arrange falling blocks to create complete lines and score points!</p>
+                    <div class="high-score">High Score: <span id="tetris-high-score">0</span></div>
+                    <button class="play-button" data-game="tetris">Play Tetris</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Game Screen -->
+        <div id="game-screen" class="screen hidden">
+            <div class="game-header">
+                <button id="back-button" class="header-button">← Menu</button>
+                <div class="score-container">
+                    Score: <span id="score">0</span>
+                </div>
+                <div class="controls-container">
+                    <button id="restart-button" class="header-button">🔄 Restart</button>
+                    <button id="pause-button" class="header-button">⏸ Pause</button>
+                </div>
+            </div>
+            <canvas id="game-canvas"></canvas>
+        </div>
+    </div>
+</body>
+</html> 
